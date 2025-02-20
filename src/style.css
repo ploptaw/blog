@@ -1,16 +1,27 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --bg-color: #e0e5ec;
   --shadow-dark: #a3b1c6;
   --shadow-light: #ffffff;
   --text-primary: #4a5568;
+  --border-radius-small: 0.5rem;
+  --transition-fast: 0.2s ease;
 }
 
 body {
   background-color: var(--bg-color);
   padding: 2rem;
   color: var(--text-primary);
-  font-family: "Yu Gothic";
-  font-size: 1.3rem;
+  font-family: "Yu Gothic", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
 }
 
 a {
@@ -22,9 +33,15 @@ a:hover {
   text-decoration: underline;
 }
 
+h2 {
+  margin: 1rem;
+  color: var(--text-primary);
+}
+
 table {
   border-collapse: collapse;
 }
+
 table,
 th,
 td {
@@ -48,7 +65,7 @@ td {
   text-decoration: none;
   color: var(--text-primary);
   line-height: 1;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -84,10 +101,9 @@ td {
   image-rendering: crisp-edges;
   background: var(--bg-color);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   margin-bottom: 1rem;
   border: 2px solid var(--shadow-dark);
-  border-color: rgba(78, 119, 155, 0.082);
 }
 
 .gallery-card h3 {
@@ -108,6 +124,7 @@ td {
 }
 
 .lottery-container {
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,20 +138,19 @@ td {
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--shadow-dark),
     -5px -5px 10px var(--shadow-light);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow var(--transition-fast);
 }
 
 .neumorphic-input {
   padding: 1rem;
   border: none;
   margin-bottom: 1rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   background: var(--bg-color);
   box-shadow: inset 2px 2px 4px var(--shadow-dark),
     inset -2px -2px 4px var(--shadow-light);
   width: 100%;
   font-size: 1.2rem;
-  box-sizing: border-box;
 }
 
 button,
@@ -147,33 +163,31 @@ button,
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   background: var(--bg-color);
   box-shadow: 5px 5px 10px var(--shadow-dark),
     -5px -5px 10px var(--shadow-light);
   font-size: 1rem;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition: box-shadow var(--transition-fast),
+    transform var(--transition-fast);
   color: var(--text-primary);
 }
 
 .result {
   text-align: center;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius-small);
   background: var(--bg-color);
   box-shadow: inset 2px 2px 4px var(--shadow-dark),
     inset -2px -2px 4px var(--shadow-light);
   width: 100%;
   overflow: hidden;
-  box-sizing: border-box;
   margin-top: 1rem;
 }
 
 .convert-container {
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
 }
 
 .text {
@@ -182,32 +196,41 @@ button,
 
 @media (max-width: 600px) {
   body {
-    padding: 2rem;
-    font-size: 2.4rem;
+    padding: 1rem;
+    font-size: 1.7rem;
   }
-
   .home-header {
     flex-direction: column;
     align-items: center;
   }
 
   .nav-links {
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 0.4rem 0.5rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    line-height: 1;
+    border-radius: var(--border-radius-small);
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   .posts-grid,
   .gallery-grid {
-    margin: 2rem;
+    margin: 0.1rem;
+    padding: 0.1rem;
   }
-
   .post-card,
   .gallery-card {
-    padding: 2rem;
+    padding: 1rem;
   }
-
   .neumorphic-input,
   button,
   .convert-button,
@@ -216,7 +239,16 @@ button,
   .copy-button,
   .delete-button,
   .clear-button {
-    font-size: 2rem;
-    padding: 1.2rem 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+  }
+
+  .result {
+    padding: 3rem;
+    margin-top: 2rem;
+  }
+
+  .text {
+    font-size: 0rem;
   }
 }
