@@ -1,0 +1,42 @@
+---
+title: Unicode変換ツール
+description: Unicodeエスケープシーケンスの変換および逆変換を行います
+layout: "tool"
+---
+
+<div class="convert-container">
+  <h2>変換</h2>
+  <textarea
+    id="input-text"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="convert-button">変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="output" class="result"></div>
+
+  <h2>逆変換</h2>
+  <textarea
+    id="input-unicode"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="reverse-button">逆変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="output-unicode" class="result"></div>
+
+  <h2>§ to & Converter</h2>
+  <textarea
+    id="section-text"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="convert-andbutton">変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="result" class="result"></div>
+
+  <script src="{{ baseUrl }}/js/unicode-convert.js"></script>
+</div>

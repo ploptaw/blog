@@ -1,0 +1,38 @@
+---
+layout: base
+title: ホーム
+---
+
+<main>
+  <h1>{{ title }}</h1>
+  <section class="posts-section">
+    <h2>記事一覧</h2>
+    <div class="posts-grid">
+      {%- for post in collections.posts | reverse -%}
+      <article class="post-card neumorphic">
+        <h3>
+          <a href="{{ baseUrl }}{{ post.url }}">{{ post.data.title }}</a>
+        </h3>
+        <time datetime="{{ post.date }}">{{ post.date | dateJP }}</time>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <br />
+  <hr class="section-divider" />
+
+  <section class="tools-section">
+    <h2>ツール一覧</h2>
+    <div class="posts-grid">
+      {%- for tool in collections.tools | reverse -%}
+      <article class="post-card neumorphic">
+        <h3>
+          <a href="{{ baseUrl }}{{ tool.url }}">{{ tool.data.title }}</a>
+        </h3>
+        <time datetime="{{ tool.date }}">{{ tool.date | dateJP }}</time>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+</main>

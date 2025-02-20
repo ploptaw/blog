@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ baseUrl }}/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="home-header">
+      <nav class="nav-links">
+        <a href="{{ baseUrl }}/" class="nav-link neumorphic">home</a>
+        <a href="{{ baseUrl }}/about" class="nav-link neumorphic">about</a>
+        <a href="{{ baseUrl }}/gallery" class="nav-link neumorphic">gallery</a>
+        <a href="https://github.com/ploptaw" class="nav-link neumorphic"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+    {{ content | safe }}
+  </body>
+</html>

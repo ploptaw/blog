@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unicode変換ツール</title>
+    <link rel="stylesheet" href="https://ploptaw.github.io/blog/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="home-header">
+      <nav class="nav-links">
+        <a href="https://ploptaw.github.io/blog/" class="nav-link neumorphic">home</a>
+        <a href="https://ploptaw.github.io/blog/about" class="nav-link neumorphic">about</a>
+        <a href="https://ploptaw.github.io/blog/gallery" class="nav-link neumorphic">gallery</a>
+        <a href="https://github.com/ploptaw" class="nav-link neumorphic"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+    
+<main>
+  <article>
+    <h1>Unicode変換ツール</h1>
+    Unicodeエスケープシーケンスの変換および逆変換を行います
+    
+<div class="convert-container">
+  <h2>変換</h2>
+  <textarea
+    id="input-text"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="convert-button">変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="output" class="result"></div>
+
+  <h2>逆変換</h2>
+  <textarea
+    id="input-unicode"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="reverse-button">逆変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="output-unicode" class="result"></div>
+
+  <h2>§ to & Converter</h2>
+  <textarea
+    id="section-text"
+    rows="4"
+    class="neumorphic-input"
+    placeholder="ここに入力してください"
+  ></textarea>
+  <button class="convert-andbutton">変換する</button>
+  <span class="text">Enterで変換　Shift+Enterで改行</span>
+  <div id="result" class="result"></div>
+
+  <script src="https://ploptaw.github.io/blog/js/unicode-convert.js"></script>
+</div>
+
+  </article>
+</main>
+
+  </body>
+</html>

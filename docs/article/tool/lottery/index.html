@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>抽選</title>
+    <link rel="stylesheet" href="https://ploptaw.github.io/blog/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="home-header">
+      <nav class="nav-links">
+        <a href="https://ploptaw.github.io/blog/" class="nav-link neumorphic">home</a>
+        <a href="https://ploptaw.github.io/blog/about" class="nav-link neumorphic">about</a>
+        <a href="https://ploptaw.github.io/blog/gallery" class="nav-link neumorphic">gallery</a>
+        <a href="https://github.com/ploptaw" class="nav-link neumorphic"
+          >GitHub</a
+        >
+      </nav>
+    </header>
+    
+<main>
+  <article>
+    <h1>抽選</h1>
+    任意の数から選択した数を被りなく抽選します
+    
+<div class="lottery-container">
+  <label for="numN">任意の数 (1-100):</label>
+  <input
+    type="number"
+    id="numN"
+    name="numN"
+    min="1"
+    max="100"
+    value="10"
+    class="neumorphic-input"
+  />
+
+  <label for="numX">選択する数 (1-100):</label>
+  <input
+    type="number"
+    id="numX"
+    name="numX"
+    min="1"
+    max="100"
+    value="3"
+    class="neumorphic-input"
+  />
+
+  <button id="drawButton" class="neumorphic-button">抽選する</button>
+  <div id="result" class="result"></div>
+</div>
+
+<script src="https://ploptaw.github.io/blog/js/lottery.js"></script>
+
+  </article>
+</main>
+
+  </body>
+</html>

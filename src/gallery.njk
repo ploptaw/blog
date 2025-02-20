@@ -1,0 +1,21 @@
+---
+layout: base
+title: ギャラリー
+---
+
+<main>
+  <h1>{{ title }}</h1>
+  <div class="gallery-grid">
+    {%- for image in collections.gallery -%}
+    <div class="gallery-card neumorphic">
+      <img
+        src="{{ baseUrl }}/{{ image.image_path }}"
+        alt="{{ image.title }}"
+        class="pixel-art"
+      />
+      <h3>{{ image.title }}</h3>
+      <p class="gallery-description">{{ image.description }}</p>
+    </div>
+    {%- endfor -%}
+  </div>
+</main>
