@@ -318,8 +318,8 @@ button,
   }
 
   .result {
-    padding: 3rem;
-    margin-top: 2rem;
+    padding: 0.5rem 0rem 1rem 0rem;
+    margin: 1rem 0rem;
   }
 
   .text {

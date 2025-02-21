@@ -4,4 +4,4 @@ date: 2025-02-21
 layout: "post"
 ---
 
-memo
+data:に Last Modified を使いたいが，ルートディレクトリ以外だと読み取れなかった
