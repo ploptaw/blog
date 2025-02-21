@@ -1,17 +1,17 @@
-document.getElementById("drawButton").addEventListener("click", function () {
-  const numN = document.getElementById("numN").value;
-  const numX = document.getElementById("numX").value;
+document.getElementById("drawButton").addEventListener("click", () => {
+  const numN = parseInt(document.getElementById("numN").value, 10);
+  const numX = parseInt(document.getElementById("numX").value, 10);
 
-  const N = parseInt(numN, 10);
-  const X = parseInt(numX, 10);
-
-  if (!isValidInput(N, X)) {
-    displayError("無効な入力です。1-100の範囲で正しい数を入力してください。");
+  if (!isValidInput(numN, numX)) {
+    displayMessage(
+      "無効な入力です。1-100の範囲で正しい数を入力してください。",
+      true
+    );
     return;
   }
 
-  const result = drawLottery(N, X);
-  displayResult(result);
+  const result = drawLottery(numN, numX);
+  displayMessage(`選ばれた番号: ${result.join(", ")}`);
 });
 
 function isValidInput(N, X) {
@@ -20,10 +20,7 @@ function isValidInput(N, X) {
   );
 }
 
-function displayError(message) {
-  document.getElementById("result").innerText = message;
-}
-
+// N 個の番号から X 個の番号を選ぶ
 function drawLottery(N, X) {
   const numbers = Array.from({ length: N }, (_, i) => i + 1);
   const result = [];
@@ -34,8 +31,8 @@ function drawLottery(N, X) {
   return result;
 }
 
-function displayResult(result) {
-  document.getElementById("result").innerText = `選ばれた番号: ${result.join(
-    ", "
-  )}`;
+function displayMessage(message, isError = false) {
+  const resultDiv = document.getElementById("result");
+  resultDiv.innerText = message;
+  resultDiv.style.color = isError ? "red" : "black";
 }

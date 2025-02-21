@@ -1,3 +1,5 @@
+const { DateTime } = require("luxon");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/style.css");
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -31,23 +33,28 @@ module.exports = function (eleventyConfig) {
       })
   );
 
-  // 日付フィルターの設定
-  eleventyConfig.addFilter("dateJP", (date) =>
-    new Date(date).toLocaleDateString("ja-JP", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+  // メモのコレクション
+  eleventyConfig.addCollection("notes", (collectionApi) =>
+    collectionApi.getFilteredByGlob("src/article/note/**/*.md").map((item) => {
+      item.data.permalink = `notes/${item.fileSlug}/index.html`;
+      return item;
     })
   );
+
+  // 日付フィルターの設定
+  eleventyConfig.addFilter("dateJP", (date, format = "yyyy年MM月dd日") => {
+    return DateTime.fromJSDate(new Date(date)).toFormat(format);
+  });
 
   return {
     dir: {
       input: "src",
       output: "docs",
     },
-    templateFormats: ["md", "njk", "html"],
+    templateFormats: ["md", "njk", "html", "haml"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
+    hamlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
   };
 };

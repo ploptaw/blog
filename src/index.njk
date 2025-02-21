@@ -6,33 +6,69 @@ title: ホーム
 <main>
   <h1>{{ title }}</h1>
   <section class="posts-section">
-    <h2>記事一覧</h2>
-    <div class="posts-grid">
-      {%- for post in collections.posts | reverse -%}
-      <article class="post-card neumorphic">
-        <h3>
-          <a href="{{ baseUrl }}{{ post.url }}">{{ post.data.title }}</a>
-        </h3>
-        <time datetime="{{ post.date }}">{{ post.date | dateJP }}</time>
-      </article>
-      {%- endfor -%}
-    </div>
+    <details open>
+      <summary><h2>Article</h2></summary>
+      <div class="posts-grid">
+        {%- for post in collections.posts | reverse -%}
+        <article class="post-card post-icon neumorphic">
+          <h3>
+            <a href="{{ baseUrl }}{{ post.url }}">{{ post.data.title }}</a>
+          </h3>
+          <time datetime="{{ post.date }}">{{ post.date | dateJP }}</time>
+        </article>
+        {%- endfor -%}
+      </div>
+    </details>
   </section>
 
   <br />
   <hr class="section-divider" />
 
   <section class="tools-section">
-    <h2>ツール一覧</h2>
-    <div class="posts-grid">
-      {%- for tool in collections.tools | reverse -%}
-      <article class="post-card neumorphic">
-        <h3>
-          <a href="{{ baseUrl }}{{ tool.url }}">{{ tool.data.title }}</a>
-        </h3>
-        <time datetime="{{ tool.date }}">{{ tool.date | dateJP }}</time>
-      </article>
-      {%- endfor -%}
-    </div>
+    <details open>
+      <summary><h2>Tool</h2></summary>
+      <div class="posts-grid">
+        {%- for tool in collections.tools | reverse -%}
+        <article class="post-card tool-icon neumorphic">
+          <h3>
+            <a href="{{ baseUrl }}{{ tool.url }}">{{ tool.data.title }}</a>
+          </h3>
+          <a href="{{ description }}" class="no-decoration">{{
+            tool.data.description
+          }}</a>
+        </article>
+        {%- endfor -%}
+      </div>
+    </details>
+  </section>
+
+  <br />
+  <hr class="section-divider" />
+
+  <section class="notes-section">
+    <details open>
+      <summary><h2>Note</h2></summary>
+      <div class="posts-grid">
+        {%- for note in collections.notes | reverse -%}
+        <article class="post-card note-icon neumorphic">
+          <h3>
+            <a href="{{ baseUrl }}{{ note.url }}">{{ note.data.title }}</a>
+          </h3>
+          <time datetime="{{ note.date }}">{{ note.date | dateJP }}</time>
+        </article>
+        {%- endfor -%}
+      </div>
+    </details>
   </section>
 </main>
+
+<script>
+  function toggleVisibility(id) {
+    var element = document.getElementById(id);
+    if (element.style.visibility === "hidden") {
+      element.style.visibility = "visible";
+    } else {
+      element.style.visibility = "hidden";
+    }
+  }
+</script>

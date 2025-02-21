@@ -2,10 +2,10 @@
   "name": "blog",
   "version": "1.0.0",
   "main": "index.js",
-    "scripts": {
-      "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
-      "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve"
-    },
+  "scripts": {
+    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
+    "start": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ploptaw/blog.git"
@@ -21,6 +21,7 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "luxon": "^3.5.0",
     "netlify-plugin-cache": "^1.0.3"
   },
   "devDependencies": {

@@ -19,23 +19,41 @@ body {
   background-color: var(--bg-color);
   padding: 2rem;
   color: var(--text-primary);
-  font-family: "Yu Gothic", sans-serif;
-  font-size: 1.4rem;
+  font-family: "Merriweather", "Noto Serif JP", serif;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
+
+.no-decoration:hover {
+  text-decoration: none;
+}
+
+.section-divider {
+  border: none;
+  height: 2px;
+  background: #a0b1ce63;
+  margin: 0.5rem 0;
+}
+
 h2 {
   margin: 1rem;
+  padding-bottom: 0.5rem;
   color: var(--text-primary);
+  font-weight: 500;
 }
 
 table {
@@ -69,25 +87,85 @@ td {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.posts-grid {
+details summary {
+  display: flex;
+}
+
+details summary::before {
+  content: "▶";
+  margin: 0.5rem;
+}
+
+details[open] summary::before {
+  content: "▼";
+}
+
+details summary h2 {
+  margin: 0;
+}
+
+details[open] > div {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.posts-grid,
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
-.post-card {
-  padding: 1.5rem;
+.posts-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .gallery-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 2rem;
   padding: 1rem;
 }
 
+.post-card,
 .gallery-card {
-  padding: 1rem;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.post-card::after,
+.post-icon::after,
+.tool-icon::after,
+.note-icon::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.post-icon::after {
+  background-color: rgba(50, 190, 140, 0.7);
+}
+
+.tool-icon::after {
+  background-color: rgba(150, 150, 240, 0.7);
+}
+
+.note-icon::after {
+  background-color: rgba(240, 150, 150, 0.7);
+}
+
+.gallery-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,21 +184,20 @@ td {
   border: 2px solid var(--shadow-dark);
 }
 
-.gallery-card h3 {
+.gallery-card h3,
+.gallery-card p,
+.gallery-card .gallery-description {
   margin: 0.5rem 0;
   color: var(--text-primary);
 }
 
 .gallery-card p {
-  margin: 0;
   font-size: 0.9rem;
-  color: var(--text-primary);
   opacity: 0.8;
 }
 
 .gallery-card .gallery-description {
   font-size: 1.2rem;
-  color: var(--text-primary);
 }
 
 .lottery-container {
@@ -176,11 +253,11 @@ button,
 
 .result {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem 0rem 1rem 0rem;
   border-radius: var(--border-radius-small);
   background: var(--bg-color);
   box-shadow: inset 2px 2px 4px var(--shadow-dark),
-    inset -2px -2px 4px var(--shadow-light);
+    inset -2px -2px 4px var (--shadow-light);
   width: 100%;
   overflow: hidden;
   margin-top: 1rem;
@@ -197,29 +274,24 @@ button,
 @media (max-width: 600px) {
   body {
     padding: 1rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
+
   .home-header {
     flex-direction: column;
     align-items: center;
   }
 
   .nav-links {
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
-    font-size: 1.4rem;
+    gap: 1rem;
+    font-size: 1.2rem;
   }
 
   .nav-link {
-    text-align: center;
-    padding: 0.4rem 0.5rem;
-    text-decoration: none;
-    color: var(--text-primary);
-    line-height: 1;
-    border-radius: var(--border-radius-small);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.7rem 0.5rem;
   }
 
   .posts-grid,
@@ -227,10 +299,12 @@ button,
     margin: 0.1rem;
     padding: 0.1rem;
   }
+
   .post-card,
   .gallery-card {
     padding: 1rem;
   }
+
   .neumorphic-input,
   button,
   .convert-button,
@@ -240,7 +314,7 @@ button,
   .delete-button,
   .clear-button {
     font-size: 1.5rem;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .result {
