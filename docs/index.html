@@ -3,49 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <title>ホーム</title>
+    <meta
+      name="description"
+      content="This site offers useful tools for minecraft, as well as personal blogs and memorandums."
+    />
+    <meta name="keywords" content="minecraft, pixel-art, blog" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Noto+Serif+JP:wght@300;400;700&display=swap"
       rel="stylesheet"
+      style="font-display: swap"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
+    <link rel="preload" href="/path/to/important-resource.css" as="style" />
+    <style>
+      body {
+        font-family: "Merriweather", serif;
+        margin: 0;
+        padding: 0;
+      }
+      .home-header {
+        background-color: #e0e5ec;
+        padding: 1rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        margin-right: 1rem;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
     <header class="home-header">
       <nav class="nav-links">
         <div>
-          <a href="/" class="nav-link"
-            ></i> home</a
-          >
-          <a href="/about" class="nav-link"
-            ></i> about</a
-          >
-          <a href="/gallery" class="nav-link"
-            ></i> gallery</a
-          >
-          <a href="https://github.com/ploptaw" class="nav-link"
-            ><i class="bi bi-github"></i
-          ></a>
-          <a href="https://twitter.com/" class="nav-link"
-            ><i class="bi bi-twitter"></i
-          ></a>
+          <a href="/" class="nav-link">home</a>
+          <a href="/about" class="nav-link">about</a>
+          <a href="/gallery" class="nav-link">gallery</a>
+          <a href="https://github.com/ploptaw" class="nav-link" alt="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://twitter.com/" class="nav-link" alt="Twitter">
+            <i class="bi bi-twitter"></i>
+          </a>
         </div>
       </nav>
     </header>
     
 <head>
-  <link
-    rel="icon"
-    href="/images/favicon.ico"
-    type="image/x-icon"
-  />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <main>
@@ -81,12 +94,16 @@
           <h3>
             <a href="/article/tool/unicode-convert/">Unicode変換ツール</a>
           </h3>
-          <a href="" class="no-decoration">変換／逆変換</a>
+          <p href="" class="no-decoration">
+            変換／逆変換
+          </p>
         </article><article class="post-card tool-icon neumorphic">
           <h3>
             <a href="/article/tool/lottery/">抽選</a>
           </h3>
-          <a href="" class="no-decoration">任意の数から被りなく抽選</a>
+          <p href="" class="no-decoration">
+            任意の数から被りなく抽選
+          </p>
         </article></div>
     </details>
   </section>

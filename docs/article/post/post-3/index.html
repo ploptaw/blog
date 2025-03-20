@@ -3,39 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <title>装飾コード表</title>
+    <meta
+      name="description"
+      content="This site offers useful tools for minecraft, as well as personal blogs and memorandums."
+    />
+    <meta name="keywords" content="minecraft, pixel-art, blog" />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/images/favicon.ico">
+    <link rel="icon" href="/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Noto+Serif+JP:wght@300;400;700&display=swap"
       rel="stylesheet"
+      style="font-display: swap"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
+    <link rel="preload" href="/path/to/important-resource.css" as="style" />
+    <style>
+      body {
+        font-family: "Merriweather", serif;
+        margin: 0;
+        padding: 0;
+      }
+      .home-header {
+        background-color: #e0e5ec;
+        padding: 1rem;
+      }
+      .nav-links a {
+        text-decoration: none;
+        margin-right: 1rem;
+        color: #333;
+      }
+    </style>
   </head>
   <body>
     <header class="home-header">
       <nav class="nav-links">
         <div>
-          <a href="/" class="nav-link"
-            ></i> home</a
-          >
-          <a href="/about" class="nav-link"
-            ></i> about</a
-          >
-          <a href="/gallery" class="nav-link"
-            ></i> gallery</a
-          >
-          <a href="https://github.com/ploptaw" class="nav-link"
-            ><i class="bi bi-github"></i
-          ></a>
-          <a href="https://twitter.com/" class="nav-link"
-            ><i class="bi bi-twitter"></i
-          ></a>
+          <a href="/" class="nav-link">home</a>
+          <a href="/about" class="nav-link">about</a>
+          <a href="/gallery" class="nav-link">gallery</a>
+          <a href="https://github.com/ploptaw" class="nav-link" alt="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://twitter.com/" class="nav-link" alt="Twitter">
+            <i class="bi bi-twitter"></i>
+          </a>
         </div>
       </nav>
     </header>

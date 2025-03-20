@@ -1,52 +1,52 @@
 [
   {
     "title": "Black Trump",
-    "description": "黒のトランプ",
-    "image_path": "images/black_trump.png"
+    "alt": "黒のトランプ",
+    "image_path": "images/black_trump.webp"
   },
   {
     "title": "Black Club",
-    "description": "黒のクラブ",
-    "image_path": "images/black_club.png"
+    "alt": "黒のクラブ",
+    "image_path": "images/black_club.webp"
   },
   {
     "title": "black Diamond",
-    "description": "黒のダイヤ",
-    "image_path": "images/black_diamond.png"
+    "alt": "黒のダイヤ",
+    "image_path": "images/black_diamond.webp"
   },
   {
     "title": "black Heart",
-    "description": "黒のハート",
-    "image_path": "images/black_heart.png"
+    "alt": "黒のハート",
+    "image_path": "images/black_heart.webp"
   },
   {
     "title": "black Spade",
-    "description": "黒のスペード",
-    "image_path": "images/black_spade.png"
+    "alt": "黒のスペード",
+    "image_path": "images/black_spade.webp"
   },
   {
     "title": "Red Trump",
-    "description": "赤のトランプ",
-    "image_path": "images/red_trump.png"
+    "alt": "赤のトランプ",
+    "image_path": "images/red_trump.webp"
   },
   {
     "title": "Red Diamond",
-    "description": "赤のダイヤ",
-    "image_path": "images/red_diamond.png"
+    "alt": "赤のダイヤ",
+    "image_path": "images/red_diamond.webp"
   },
   {
     "title": "Red Heart",
-    "description": "赤のハート",
-    "image_path": "images/red_heart.png"
+    "alt": "赤のハート",
+    "image_path": "images/red_heart.webp"
   },
   {
     "title": "Red Spade",
-    "description": "赤のスペード",
-    "image_path": "images/red_spade.png"
+    "alt": "赤のスペード",
+    "image_path": "images/red_spade.webp"
   },
   {
     "title": "Red Club",
-    "description": "赤のクラブ",
-    "image_path": "images/red_club.png"
+    "alt": "赤のクラブ",
+    "image_path": "images/red_club.webp"
   }
 ]

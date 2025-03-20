@@ -4,11 +4,7 @@ title: ホーム
 ---
 
 <head>
-  <link
-    rel="icon"
-    href="/images/favicon.ico"
-    type="image/x-icon"
-  />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <main>
@@ -40,9 +36,9 @@ title: ホーム
           <h3>
             <a href="{{ tool.url }}">{{ tool.data.title }}</a>
           </h3>
-          <a href="{{ description }}" class="no-decoration">{{
-            tool.data.description
-          }}</a>
+          <p href="{{ description }}" class="no-decoration">
+            {{ tool.data.description }}
+          </p>
         </article>
         {%- endfor -%}
       </div>
