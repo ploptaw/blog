@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
-    "dev": "cross-env ELEVENTY_ENV=development npx @11ty/eleventy --serve"
+    "build": "cross-env npx @11ty/eleventy",
+    "dev": "cross-env npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",

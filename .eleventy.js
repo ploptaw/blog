@@ -5,11 +5,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/js");
 
-  // baseUrlの設定
-  const isProd = process.env.ELEVENTY_ENV === "production";
-  const baseUrl = isProd ? "https://ploptaw.github.io/blog" : "";
-  eleventyConfig.addGlobalData("baseUrl", baseUrl);
-
   // gallery のコレクション
   eleventyConfig.addCollection("gallery", () =>
     require("./src/gallery/gallery.json")

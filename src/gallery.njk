@@ -9,7 +9,7 @@ title: ギャラリー
     {%- for image in collections.gallery -%}
     <div class="gallery-card">
       <img
-        src="{{ baseUrl }}/{{ image.image_path }}"
+        src="/{{ image.image_path }}"
         alt="{{ image.title }}"
         class="pixel-art"
       />

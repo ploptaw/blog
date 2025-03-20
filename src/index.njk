@@ -6,7 +6,7 @@ title: ホーム
 <head>
   <link
     rel="icon"
-    href="{{ baseUrl }}/images/favicon.ico"
+    href="/images/favicon.ico"
     type="image/x-icon"
   />
 </head>
@@ -20,7 +20,7 @@ title: ホーム
         {%- for post in collections.posts | reverse -%}
         <article class="post-card post-icon neumorphic">
           <h3>
-            <a href="{{ baseUrl }}{{ post.url }}">{{ post.data.title }}</a>
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
           </h3>
           <time datetime="{{ post.date }}">{{ post.date | dateJP }}</time>
         </article>
@@ -38,7 +38,7 @@ title: ホーム
         {%- for tool in collections.tools | reverse -%}
         <article class="post-card tool-icon neumorphic">
           <h3>
-            <a href="{{ baseUrl }}{{ tool.url }}">{{ tool.data.title }}</a>
+            <a href="{{ tool.url }}">{{ tool.data.title }}</a>
           </h3>
           <a href="{{ description }}" class="no-decoration">{{
             tool.data.description
@@ -58,7 +58,7 @@ title: ホーム
         {%- for note in collections.notes | reverse -%}
         <article class="post-card note-icon neumorphic">
           <h3>
-            <a href="{{ baseUrl }}{{ note.url }}">{{ note.data.title }}</a>
+            <a href="{{ note.url }}">{{ note.data.title }}</a>
           </h3>
           <time datetime="{{ note.date }}">{{ note.date | dateJP }}</time>
         </article>
