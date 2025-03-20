@@ -7,7 +7,7 @@ title: ギャラリー
   <h1>{{ title }}</h1>
   <div class="gallery-grid">
     {%- for image in collections.gallery -%}
-    <div class="gallery-card neumorphic">
+    <div class="gallery-card">
       <img
         src="{{ baseUrl }}/{{ image.image_path }}"
         alt="{{ image.title }}"

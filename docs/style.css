@@ -44,9 +44,9 @@ a:hover {
 
 .section-divider {
   border: none;
-  height: 2px;
-  background: #a0b1ce63;
+  height: 1px;
   margin: 0.5rem 0;
+  padding-bottom: 1rem;
 }
 
 h2 {
@@ -68,7 +68,6 @@ td {
 
 .home-header {
   display: flex;
-  justify-content: center;
   margin-bottom: 2rem;
 }
 
@@ -78,7 +77,6 @@ td {
 }
 
 .nav-link {
-  text-align: center;
   padding: 0.8rem 1.2rem;
   text-decoration: none;
   color: var(--text-primary);
@@ -130,7 +128,9 @@ details[open] > div {
 }
 
 .gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   padding: 1rem;
 }
 
@@ -169,22 +169,30 @@ details[open] > div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--bg-color);
+  border-radius: var(--border-radius-small);
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
 }
 
 .gallery-card img.pixel-art {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  background: var(--bg-color);
-  padding: 1rem;
-  border-radius: var(--border-radius-small);
-  margin-bottom: 1rem;
-  border: 2px solid var(--shadow-dark);
+  margin-bottom: 0.5rem;
 }
 
-.gallery-card h3,
+.gallery-card h3 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+
 .gallery-card p,
 .gallery-card .gallery-description {
   margin: 0.5rem 0;
@@ -209,8 +217,7 @@ details[open] > div {
   padding: 2rem;
 }
 
-.neumorphic,
-.lottery-container {
+.neumorphic {
   background: var(--bg-color);
   border-radius: 10px;
   box-shadow: 5px 5px 10px var(--shadow-dark),
@@ -323,6 +330,16 @@ button,
   }
 
   .text {
+    font-size: 0rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .gallery-card .gallery-description {
     font-size: 0rem;
   }
 }

@@ -3,6 +3,14 @@ layout: base
 title: ホーム
 ---
 
+<head>
+  <link
+    rel="icon"
+    href="{{ baseUrl }}/images/favicon.ico"
+    type="image/x-icon"
+  />
+</head>
+
 <main>
   <h1>{{ title }}</h1>
   <section class="posts-section">
@@ -21,7 +29,6 @@ title: ホーム
     </details>
   </section>
 
-  <br />
   <hr class="section-divider" />
 
   <section class="tools-section">
@@ -42,7 +49,6 @@ title: ホーム
     </details>
   </section>
 
-  <br />
   <hr class="section-divider" />
 
   <section class="notes-section">
@@ -64,11 +70,8 @@ title: ホーム
 
 <script>
   function toggleVisibility(id) {
-    var element = document.getElementById(id);
-    if (element.style.visibility === "hidden") {
-      element.style.visibility = "visible";
-    } else {
-      element.style.visibility = "hidden";
-    }
+    const element = document.getElementById(id);
+    element.style.visibility =
+      element.style.visibility === "hidden" ? "visible" : "hidden";
   }
 </script>

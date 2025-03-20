@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", setupHandlers);
+
+function setupHandlers() {
   const inputText = document.getElementById("input-text");
   const inputUnicode = document.getElementById("input-unicode");
   const sectionText = document.getElementById("section-text");
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateOutput(resultDiv, sectionText.value.replace(/§/g, "&"), true),
     },
   ]);
-});
+}
 
 // 入力欄
 function setupPlaceholder(textareas) {
@@ -80,23 +82,22 @@ function updateOutput(container, text, enableCopy = false) {
 
   // コピー機能
   if (enableCopy) {
-    const copyBtn = document.createElement("button");
-    copyBtn.textContent = "コピー";
-    copyBtn.classList.add("copy-button");
-    copyBtn.addEventListener("click", () => {
-      navigator.clipboard.writeText(text);
-    });
+    const copyBtn = createButton("コピー", () =>
+      navigator.clipboard.writeText(text)
+    );
     container.appendChild(copyBtn);
   }
 
   // クリア機能
-  const clearBtn = document.createElement("button");
-  clearBtn.textContent = "クリア";
-  clearBtn.classList.add("clear-button");
-  clearBtn.addEventListener("click", () => {
-    container.textContent = "";
-  });
+  const clearBtn = createButton("クリア", () => (container.textContent = ""));
   container.appendChild(clearBtn);
+}
+
+function createButton(text, handler) {
+  const button = document.createElement("button");
+  button.textContent = text;
+  button.addEventListener("click", handler);
+  return button;
 }
 
 // 変換関数

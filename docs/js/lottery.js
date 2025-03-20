@@ -1,4 +1,6 @@
-document.getElementById("drawButton").addEventListener("click", () => {
+document.getElementById("drawButton").addEventListener("click", handleDraw);
+
+function handleDraw() {
   const numN = parseInt(document.getElementById("numN").value, 10);
   const numX = parseInt(document.getElementById("numX").value, 10);
 
@@ -12,7 +14,7 @@ document.getElementById("drawButton").addEventListener("click", () => {
 
   const result = drawLottery(numN, numX);
   displayMessage(`選ばれた番号: ${result.join(", ")}`);
-});
+}
 
 function isValidInput(N, X) {
   return (
@@ -29,6 +31,12 @@ function drawLottery(N, X) {
     result.push(numbers.splice(index, 1)[0]);
   }
   return result;
+}
+
+function setupButtonHandlers(handlers) {
+  handlers.forEach(({ buttonClass, handler }) => {
+    document.querySelector(buttonClass).addEventListener("click", handler);
+  });
 }
 
 function displayMessage(message, isError = false) {
