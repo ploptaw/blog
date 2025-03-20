@@ -271,7 +271,7 @@ button,
   font-size: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   body {
     padding: 1rem;
     font-size: 1.2rem;
@@ -287,11 +287,11 @@ button,
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-    font-size: 1.2rem;
   }
 
   .nav-link {
-    padding: 0.7rem 0.5rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 1.3rem;
   }
 
   .posts-grid,
