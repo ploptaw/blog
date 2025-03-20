@@ -8,47 +8,32 @@
       content="This site offers useful tools for minecraft, as well as personal blogs and memorandums."
     />
     <meta name="keywords" content="minecraft, pixel-art, blog" />
-    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="/manifest.json" />
     <link rel="icon" href="/images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/style.css" as="style" media="all" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Noto+Serif+JP:wght@300;400;700&display=swap"
-      rel="stylesheet"
-      style="font-display: swap"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <link rel="preload" href="/path/to/important-resource.css" as="style" />
+    rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Noto+Serif+JP:wght@300;400;700&display=swap"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+  <link
+    rel="preload"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
     <style>
-      body {
-        background-color: var(--bg-color);
-        padding: 2rem;
-        color: var(--text-primary);
-        font-family: "Merriweather", "Noto Serif JP", serif;
-        font-size: 1.2rem;
-        line-height: 1.5;
-      }
-      .home-header {
-        display: flex;
-        margin-bottom: 2rem;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 1rem;
-      }
+        html,body{
+            background-color: var(--bg-color);
+        }
+        .lazyload, .main-container{
+            display:none;
+        }
     </style>
-    <link
-      rel="stylesheet"
-      href="/style.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <noscript><link rel="stylesheet" href="/style.min.css" /></noscript>
   </head>
   <body>
     <header class="home-header">
@@ -57,11 +42,8 @@
           <a href="/" class="nav-link">home</a>
           <a href="/about" class="nav-link">about</a>
           <a href="/gallery" class="nav-link">gallery</a>
-          <a href="https://github.com/ploptaw" class="nav-link" alt="GitHub">
-            <i class="bi bi-github"></i>
-          </a>
-          <a href="https://twitter.com/" class="nav-link" alt="Twitter">
-            <i class="bi bi-twitter"></i>
+          <a href="https://github.com/ploptaw" class="nav-link">
+            <i class="bi bi-github"></i> GitHub
           </a>
         </div>
       </nav>
@@ -146,5 +128,4 @@
   }
 </script>
 
-  </body>
 </html>

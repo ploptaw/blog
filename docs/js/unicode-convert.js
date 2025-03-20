@@ -70,6 +70,12 @@ function setupButtonHandlers(handlers) {
 
 // 出力欄
 function updateOutput(container, text, enableCopy = false) {
+  // 文字数制限のチェック
+  if (text.length > 2000) {
+    container.textContent = "エラー: 変換できる文字数は2000文字までです。";
+    return;
+  }
+
   container.textContent = "";
 
   const label = document.createElement("p");

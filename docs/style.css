@@ -129,8 +129,10 @@ details[open] > div {
 .gallery-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   padding: 1rem;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .post-card,
@@ -192,8 +194,7 @@ details[open] > div {
   text-align: center;
 }
 
-.gallery-card p,
-.gallery-card .gallery-description {
+.gallery-card p {
   margin: 0.5rem 0;
   color: var(--text-primary);
 }
@@ -201,10 +202,6 @@ details[open] > div {
 .gallery-card p {
   font-size: 0.9rem;
   opacity: 0.8;
-}
-
-.gallery-card .gallery-description {
-  font-size: 1.2rem;
 }
 
 .lottery-container {
@@ -239,10 +236,7 @@ details[open] > div {
 button,
 .convert-button,
 .reverse-button,
-.convert-andbutton,
-.copy-button,
-.delete-button,
-.clear-button {
+.convert-andbutton {
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   border: none;
@@ -315,10 +309,7 @@ button,
   button,
   .convert-button,
   .reverse-button,
-  .convert-andbutton,
-  .copy-button,
-  .delete-button,
-  .clear-button {
+  .convert-andbutton {
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
   }
@@ -333,12 +324,10 @@ button,
   }
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     max-width: 100%;
-    margin: 0 auto;
-  }
-
-  .gallery-card .gallery-description {
-    font-size: 0rem;
+    overflow: hidden;
   }
 }
