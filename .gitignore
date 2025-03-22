@@ -1,0 +1,35 @@
+# Node.js関連
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 環境設定ファイル
+.env
+.env.local
+.env.*.local
+
+# IDEやエディタ固有のファイル
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+
+# 静的サイトジェネレーターのキャッシュや成果物
+.cache/
+*.tmp
+
+# OS固有のファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# テスト関連
+coverage/
+
+# その他
+*.bak
