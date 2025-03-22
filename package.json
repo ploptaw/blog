@@ -34,8 +34,6 @@
     "@sardine/eleventy-plugin-tinyhtml": "^0.2.0",
     "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.86.0",
     "uglify-js": "^3.19.3"
   }
 }

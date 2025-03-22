@@ -7,12 +7,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./manifest.json");
 
-  // plugin の読み込み
+  // codeHighlight
   const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
   const PRISM_THEME =
     "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
   eleventyConfig.addPlugin(codeHighlighter, { urlTheme: PRISM_THEME });
 
+  // tinyHTML plugin
   const tinyHTML = require("@sardine/eleventy-plugin-tinyhtml");
   const tinyHTMLOptions = {
     html5: true,
