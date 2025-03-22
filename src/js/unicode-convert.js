@@ -83,7 +83,7 @@ function updateOutput(container, text, enableCopy = false) {
 
   const textarea = document.createElement("textarea");
   textarea.value = text;
-  textarea.classList.add("neumorphic-input");
+  textarea.classList.add("input");
   container.appendChild(textarea);
 
   // コピー機能
