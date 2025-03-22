@@ -2,7 +2,7 @@
   "name": "ploptaw blog",
   "short_name": "blog",
   "start_url": "/",
-  "theme_color": "#e0e5ec",
+  "theme-color": "#e0e5ec",
   "background_color": "#e0e5ec",
   "display": "standalone",
   "description": "blog",
