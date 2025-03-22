@@ -25,7 +25,7 @@ body {
   background-color: var(--bg-color);
   padding: 1rem;
   color: var(--text-primary);
-  font-family: "Yu Mincho", monospace;
+  font-family: "Yu Mincho", serif;
   font-display: swap;
   font-size: 1.5em;
   line-height: 1.5;
@@ -146,6 +146,7 @@ article {
 details summary {
   display: flex;
   margin: 0;
+  list-style: none;
 }
 
 details summary::before {
@@ -160,6 +161,10 @@ details[open] summary::before {
 
 details[open] > div {
   animation: slideDown 0.3s ease-out;
+}
+
+details summary::-webkit-details-marker {
+  display: none; /* Safari/iOS用 */
 }
 
 /* 各記事 */
@@ -207,7 +212,6 @@ details[open] > div {
 
 .gallery-title {
   font-size: 1.2rem;
-  font-weight: bold;
 }
 
 .gallery-alt {
