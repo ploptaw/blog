@@ -91,11 +91,13 @@ function updateOutput(container, text, enableCopy = false) {
     const copyBtn = createButton("コピー", () =>
       navigator.clipboard.writeText(text)
     );
+    copyBtn.classList.add("button");
     container.appendChild(copyBtn);
   }
 
   // クリア機能
   const clearBtn = createButton("クリア", () => (container.textContent = ""));
+  clearBtn.classList.add("button");
   container.appendChild(clearBtn);
 }
 
