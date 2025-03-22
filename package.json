@@ -24,6 +24,7 @@
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
     "chokidar-cli": "^3.0.0",
+    "eleventy-critical-css": "^2.0.2",
     "lightningcss": "^1.29.3",
     "luxon": "^3.5.0",
     "netlify-plugin-cache": "^1.0.3",

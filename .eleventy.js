@@ -1,4 +1,5 @@
 const { DateTime } = require("luxon");
+const criticalCss = require("eleventy-critical-css");
 const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
 const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 
@@ -17,6 +18,9 @@ module.exports = function (eleventyConfig) {
 
   // minify plugin options
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
+
+  // criticalCss plugin options
+  eleventyConfig.addPlugin(criticalCss);
 
   // gallery のコレクション
   eleventyConfig.addCollection("gallery", () =>
