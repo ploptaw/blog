@@ -12,8 +12,12 @@ title: ギャラリー
         src="/{{ image.image_path }}"
         alt="Image of {{ image.title }}"
         class="pixel-art"
+        loading="lazy"
+        decoding="async"
+        width="150"
+        height="150"
       />
-      <h3>{{ image.title }}</h3>
+      <p class="gallery-title">{{ image.title }}</p>
       <p class="gallery-alt">{{ image.alt }}</p>
     </div>
     {%- endfor -%}

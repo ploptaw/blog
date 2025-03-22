@@ -42,6 +42,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.p {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
 .no-decoration:hover {
   text-decoration: none;
 }
@@ -65,11 +71,17 @@ h2 {
   color: var(--text-primary);
   font-weight: 500;
 }
+.h3 {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
 
 /* リスト */
-ol {
-  padding-left: 1.5em;
-  margin-left: 0;
+ol,
+ul {
+  list-style-position: outside;
+  padding-left: 1.5rem;
 }
 
 /* テーブル */
@@ -150,21 +162,38 @@ details[open] > div {
 }
 
 /* グリッド */
-.posts-grid,
-.gallery-grid {
+.posts-grid {
   display: grid;
-  gap: 1.2rem;
+  gap: 1rem;
+}
+
+.gallery-grid {
+  gap: 0.5rem;
 }
 
 .posts-grid {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
+/* ギャラリーグリッド */
 .gallery-grid {
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: center;
+  margin: 0.7rem;
   max-width: 100%;
   overflow: hidden;
+}
+
+.gallery-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.gallery-alt {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
 }
 
 /* カード */
@@ -172,6 +201,7 @@ details[open] > div {
 .gallery-card {
   padding: 1.5rem;
   position: relative;
+  image-rendering: pixelated;
 }
 
 .post-card::after,
@@ -199,39 +229,23 @@ details[open] > div {
   background-color: rgba(240, 150, 150, 0.7);
 }
 
+/* ギャラリーカードのスタイル改善 */
 .gallery-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--bg-color);
+  justify-content: space-between;
   border-radius: var(--border-radius-small);
   padding: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.gallery-card:hover {
-  transform: scale(1.05);
-}
-
-.gallery-card img.pixel-art {
-  width: 150px;
-  height: 150px;
-  image-rendering: pixelated;
-  margin-bottom: 0.5rem;
-}
-
-.gallery-card h3 {
-  font-size: 1rem;
-  color: var(--text-primary);
+  max-width: 200px;
   text-align: center;
 }
 
-.gallery-card p {
-  margin: 0.5rem 0;
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  opacity: 0.8;
+.gallery-card img.pixel-art {
+  max-width: 150px;
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-small);
 }
 
 .lottery-container {
