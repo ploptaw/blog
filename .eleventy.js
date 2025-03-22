@@ -8,7 +8,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
   eleventyConfig.addPassthroughCopy("./src/icon-192x192.png");
-  eleventyConfig.addPassthroughCopy("./manifest.json");
+  eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
 
   // codeHighlight plugin options
   const PRISM_THEME =
