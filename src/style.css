@@ -277,11 +277,13 @@ details summary::-webkit-details-marker {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 1rem;
   padding: 2rem;
 }
 
 .input {
+  font-size: 1rem;
   border: none;
   padding: var(--input-padding);
   margin: 0rem 0.5rem 0.5rem 0;

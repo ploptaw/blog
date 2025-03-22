@@ -1,27 +1,22 @@
 const { DateTime } = require("luxon");
+const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
+const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/style.min.css");
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
-  eleventyConfig.addPassthroughCopy("./src/assets");
+  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
+  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
   eleventyConfig.addPassthroughCopy("./manifest.json");
 
-  // codeHighlight
-  const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
+  // codeHighlight plugin options
   const PRISM_THEME =
     "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
   eleventyConfig.addPlugin(codeHighlighter, { urlTheme: PRISM_THEME });
 
-  // tinyHTML plugin
-  const tinyHTML = require("@sardine/eleventy-plugin-tinyhtml");
-  const tinyHTMLOptions = {
-    html5: true,
-    removeRedundantAttributes: true,
-    collapseWhitespace: true,
-    removeComments: true,
-  };
-  eleventyConfig.addPlugin(tinyHTML, tinyHTMLOptions);
+  // minify plugin options
+  eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // gallery のコレクション
   eleventyConfig.addCollection("gallery", () =>
