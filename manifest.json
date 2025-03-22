@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#e0e5ec",
   "theme_color": "#000000",
-  "description": "This site offers useful tools for minecraft, as well as personal blogs and memorandums.",
+  "description": "ブログ",
   "icons": [
     {
       "src": "icon-192x192.png",

@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/style.min.css");
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
   eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("./src/icon-192x192.png");
   eleventyConfig.addPassthroughCopy("./manifest.json");
 
   // codeHighlight plugin options
