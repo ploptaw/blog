@@ -95,6 +95,26 @@ td {
   border: 1px solid rgba(0, 0, 0, 0.116);
 }
 
+/* スクロールバーのスタイル */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--shadow-dark); /* スクロールバーのつまみの色 */
+  border-radius: var(--border-radius-small);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary); /* ホバー時の色 */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color); /* スクロールバーの背景 */
+  border-radius: 6px; /* 角丸 */
+}
+
 /* ヘッダー */
 .home-header {
   display: flex;

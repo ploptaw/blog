@@ -4,14 +4,16 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy("./src/style.min.css");
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
+  eleventyConfig.addPassthroughCopy("./src/assets");
   eleventyConfig.addPassthroughCopy("./manifest.json");
 
   // plugin の読み込み
   const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
-  const PRISM_THEME = "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
+  const PRISM_THEME =
+    "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
   eleventyConfig.addPlugin(codeHighlighter, { urlTheme: PRISM_THEME });
 
-  const tinyHTML = require('@sardine/eleventy-plugin-tinyhtml');
+  const tinyHTML = require("@sardine/eleventy-plugin-tinyhtml");
   const tinyHTMLOptions = {
     html5: true,
     removeRedundantAttributes: true,
