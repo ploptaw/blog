@@ -21,6 +21,7 @@ yarn-error.log*
 
 # 静的サイトジェネレーターのキャッシュや成果物
 .cache/
+docs/
 *.tmp
 
 # OS固有のファイル
