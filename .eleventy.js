@@ -1,14 +1,12 @@
 const { DateTime } = require("luxon");
-const criticalCss = require("eleventy-critical-css");
+//const criticalCss = require("eleventy-critical-css");
 const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
 const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
-  eleventyConfig.addPassthroughCopy("./src/style.min.css");
+  eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
-  eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-  eleventyConfig.addPassthroughCopy("./src/icon-192x192.png");
   eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
 
   // codeHighlight plugin options
@@ -20,7 +18,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // criticalCss plugin options
-  eleventyConfig.addPlugin(criticalCss);
+  //eleventyConfig.addPlugin(criticalCss);
 
   // gallery のコレクション
   eleventyConfig.addCollection("gallery", () =>

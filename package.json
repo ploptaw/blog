@@ -5,7 +5,7 @@
   "scripts": {
     "build": "cross-env npx @11ty/eleventy",
     "dev": "cross-env npx @11ty/eleventy --serve",
-    "compress": "npx lightningcss-cli --minify --bundle --targets \">= 0.25%, not dead\" src/style.css -o src/style.min.css",
+    "compress": "npx lightningcss-cli --minify --bundle --targets \">= 0.25%, not dead\" src/style.css -o src/public/style.min.css",
     "watch": "chokidar src/style.css sec/js/*.js -c \"npm run compress\""
   },
   "repository": {
