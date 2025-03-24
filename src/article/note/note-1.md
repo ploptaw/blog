@@ -4,4 +4,4 @@ title: メモ1
 layout: "post"
 ---
 
-data:に Last Modified を使いたいが，ルートディレクトリ以外だと読み取れなかった
+初投稿

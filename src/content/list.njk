@@ -1,0 +1,68 @@
+---
+layout: base
+title: All Post
+---
+
+<main>
+  <article>
+    <h1>{{ title }}</h1>
+
+    <th>
+      {%- set previousDate = "" -%} {%- for post in collections.all -%}
+      <li
+        class="post-item"
+        style="
+          display: flex;
+          padding: 0.4rem 0.3rem;
+          justify-content: space-between;
+          margin-bottom: 0.1em;
+        "
+      >
+        <div style="display: flex; align-items: center">
+          <!-- タイトル -->
+          <a href="{{ post.url }}" class="post-title">{{ post.data.title }}</a>
+
+          <!-- タグ -->
+          {%- if post.data.tags -%}
+          <ul
+            class="tags"
+            style="margin-left: 1rem; list-style: none; padding: 0"
+          >
+            {%- for tag in post.data.tags -%}
+            <li style="display: inline">
+              <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
+              {%- if not loop.last -%} 　{%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+          {%- endif -%}
+        </div>
+
+        <!-- 日付 -->
+        {%- if previousDate != (post.date | dateMIN ) -%}
+        <span class="post-date" style="font-size: 0.8em; color: #848fa0">{{
+          post.date | dateMIN
+        }}</span>
+        {%- set previousDate = post.date | dateMIN -%} {%- else -%}
+        <span class="post-separator"> </span>
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </th>
+
+    <!-- タグ一覧セクション -->
+    <section class="all-tags">
+      <h1>Tag List</h1>
+      <ul
+        class="tags neumorphic"
+        style="display: flex; flex-wrap: wrap; padding: 1rem"
+      >
+        {%- for tag in collections.tags -%}
+        <li>
+          <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </section>
+  </article>
+</main>

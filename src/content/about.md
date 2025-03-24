@@ -1,6 +1,6 @@
 ---
 layout: base
-title: プロフィール
+title: About
 ---
 
 # プロフィール

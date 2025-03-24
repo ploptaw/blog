@@ -1,10 +1,11 @@
 ---
-title: メモ2
+title: MOD更新
 date: 2025-03-20
 layout: "post"
+tags: [mod, minecraft]
 ---
 
-## MOD 更新について
+## {{ title }} するときに確認する
 
 - gradle.properties
 - build.gradle

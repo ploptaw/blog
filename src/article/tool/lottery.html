@@ -4,7 +4,7 @@ description: 任意の数から被りなく抽選
 layout: "tool"
 ---
 
-<div class="lottery-container">
+<div>
   <label for="numN">任意の数 (1-100):</label>
   <input
     type="number"
@@ -27,7 +27,13 @@ layout: "tool"
     class="input"
   />
 
-  <button id="drawButton" class="neumorphic-button">抽選する</button>
+  <button
+    id="drawButton"
+    class="button"
+    style="display: block; margin: 1rem auto"
+  >
+    抽選する
+  </button>
   <div id="result" class="result"></div>
 </div>
 

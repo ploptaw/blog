@@ -1,7 +1,8 @@
 ---
-title: メモ3
+title: css/js圧縮
 date: 2025-03-21
 layout: "post"
+tags: optimize
 ---
 
 ### uglifyjs によるサイズ削減
@@ -10,6 +11,6 @@ layout: "post"
 npx uglifyjs ./src/js/lottery.js -c -m --output ./src/js/lottery.min.js
 ```
 
-### その他の optimize について
+### その他の最適化について
 
 eleventy-critical-css を用いることを考えたが，ビルド時間がやけに長くなったのでいったん保留

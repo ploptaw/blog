@@ -1,4 +1,3 @@
-const { DateTime } = require("luxon");
 //const criticalCss = require("eleventy-critical-css");
 const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
 const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
@@ -51,10 +50,32 @@ module.exports = function (eleventyConfig) {
     })
   );
 
-  // 日付フィルターの設定
-  eleventyConfig.addFilter("dateJP", (date, format = "yyyy年MM月dd日") => {
-    return DateTime.fromJSDate(new Date(date)).toFormat(format);
+  // タグのコレクション
+  eleventyConfig.addCollection("tags", function (collectionApi) {
+    let tagSet = new Set();
+    collectionApi.getAll().forEach((item) => {
+      if ("tags" in item.data) {
+        let tags = item.data.tags;
+        if (Array.isArray(tags)) {
+          tags.forEach((tag) => tagSet.add(tag));
+        }
+      }
+    });
+    return [...tagSet];
   });
+
+  // 日付フィルターの設定
+  eleventyConfig.addFilter(
+    "dateJP",
+    (target) =>
+      `${target.getFullYear()}年${target.getMonth() + 1}月${target.getDate()}日`
+  );
+
+  // 日付フィルターの設定 (最小表示)
+  eleventyConfig.addFilter(
+    "dateMIN",
+    (target) => `${target.getYear() - 100}年${target.getMonth() + 1}月`
+  );
 
   return {
     dir: {

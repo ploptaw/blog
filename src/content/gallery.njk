@@ -1,0 +1,61 @@
+---
+layout: base
+title: Gallery
+---
+
+<main>
+  <h1>{{ title }}</h1>
+  <div
+    class="gallery-grid"
+    style="
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      justify-content: center;
+      gap: 0.7rem;
+      max-width: 100%;
+      overflow: hidden;
+    "
+  >
+    {%- for image in collections.gallery -%}
+    <div
+      class="gallery-card"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        max-width: 200px;
+        text-align: center;
+      "
+    >
+      <img
+        src="/{{ image.image_path }}"
+        alt="Image of {{ image.title }}"
+        class="pixel-art"
+        loading="lazy"
+        decoding="async"
+        width="150"
+        height="150"
+        style="
+          max-width: 150px;
+          margin-bottom: 1rem;
+          border-radius: 0.5rem;
+          image-rendering: pixelated;
+        "
+      />
+      <p class="gallery-title" style="font-size: 1.2rem; margin: 0">
+        {{ image.title }}
+      </p>
+      <p
+        class="gallery-alt"
+        style="font-size: 0.8rem; color: rgba(0, 0, 0, 0.6); margin: 0"
+      >
+        {{ image.alt }}
+      </p>
+    </div>
+    {%- endfor -%}
+  </div>
+</main>

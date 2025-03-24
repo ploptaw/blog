@@ -42,16 +42,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.p {
-  color: var(--text-primary);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.no-decoration:hover {
-  text-decoration: none;
-}
-
 .section-divider {
   border: none;
   height: 1px;
@@ -95,7 +85,7 @@ td {
   border: 1px solid rgba(0, 0, 0, 0.116);
 }
 
-/* スクロールバーのスタイル */
+/* スクロールバー */
 ::-webkit-scrollbar {
   width: 8px;
   height: 6px;
@@ -137,7 +127,7 @@ td {
 
 /* 記事 */
 article {
-  padding-left: 0.2rem;
+  padding: 0;
   font-size: 1.2rem;
   line-height: 1.5;
 }
@@ -167,12 +157,12 @@ details summary::-webkit-details-marker {
   display: none; /* Safari/iOS用 */
 }
 
-/* 各記事 */
 .neumorphic {
   background: var(--bg-color);
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   transition: box-shadow var(--transition-fast);
+  padding: 1rem;
 }
 
 @keyframes slideDown {
@@ -192,46 +182,17 @@ details summary::-webkit-details-marker {
   gap: 1rem;
 }
 
-.gallery-grid {
-  gap: 0.5rem;
-}
-
 .posts-grid {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-/* ギャラリーグリッド */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  justify-content: center;
-  margin: 0.7rem;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-.gallery-title {
-  font-size: 1.2rem;
-}
-
-.gallery-alt {
-  font-size: 0.8rem;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0;
-}
-
 /* カード */
-.post-card,
-.gallery-card {
+.post-card {
   padding: 1.5rem;
   position: relative;
-  image-rendering: pixelated;
 }
 
-.post-card::after,
-.post-icon::after,
-.tool-icon::after,
-.note-icon::after {
+.dot-icon::after {
   content: "";
   position: absolute;
   bottom: 10px;
@@ -253,33 +214,19 @@ details summary::-webkit-details-marker {
   background-color: rgba(240, 150, 150, 0.7);
 }
 
-/* ギャラリーカードのスタイル改善 */
-.gallery-card {
-  display: flex;
-  flex-direction: column;
+/* タグ */
+.tags {
+  font-size: 1rem;
+  padding-left: 1rem;
   align-items: center;
-  justify-content: space-between;
-  border-radius: var(--border-radius-small);
-  padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  max-width: 200px;
-  text-align: center;
 }
 
-.gallery-card img.pixel-art {
-  max-width: 150px;
-  margin-bottom: 1rem;
+.tags li {
+  list-style: none;
+  padding: 0 0.2rem;
+  margin: 0 1rem 1rem 0;
+  background-color: #bdbeec;
   border-radius: var(--border-radius-small);
-}
-
-.lottery-container {
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 2rem;
 }
 
 .input {
@@ -305,7 +252,7 @@ button {
   transition: box-shadow var(--transition-fast),
     transform var(--transition-fast);
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-primary);
 }
 
@@ -315,14 +262,6 @@ button {
   width: 100%;
   overflow: hidden;
   margin-top: 1rem;
-}
-
-.convert-container {
-  padding: 0rem;
-}
-
-.text {
-  font-size: 1rem;
 }
 
 /* メディアクエリ */
@@ -349,18 +288,15 @@ button {
     font-size: 1.3rem;
   }
 
-  .posts-grid,
-  .gallery-grid {
+  .posts-grid {
     margin: 0.1rem;
     padding: 0.1rem;
   }
 
-  .post-card,
-  .gallery-card {
+  .post-card {
     padding: 1rem;
   }
 
-  .neumorphic-input,
   button {
     font-size: 1rem;
     padding: 0.4rem 0.8rem;
@@ -371,14 +307,7 @@ button {
     margin: 1rem 0;
   }
 
-  .text {
-    font-size: 0;
-  }
-
-  .gallery-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    max-width: 100%;
+  .mob-hide {
+    display: none;
   }
 }

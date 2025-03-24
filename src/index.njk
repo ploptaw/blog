@@ -1,6 +1,6 @@
 ---
 layout: base
-title: ホーム
+title: Home
 ---
 
 <head>
@@ -8,13 +8,24 @@ title: ホーム
 </head>
 
 <main>
-  <h1>{{ title }}</h1>
+  <h1>Welcome to my blog</h1>
+
+  <div class="about-link">
+    <article class="about-card">
+      <p>
+        This blog is a collection of my notes, articles, and tools.
+        <a href="/content/about" style="color: #585bc4">Read More →</a>
+      </p>
+    </article>
+  </div>
+  <br />
+
   <section class="posts-section">
     <details open>
       <summary><h2>Article</h2></summary>
       <div class="posts-grid">
         {%- for post in collections.posts | reverse -%}
-        <article class="post-card post-icon neumorphic">
+        <article class="post-card dot-icon post-icon neumorphic">
           <h3>
             <a href="{{ post.url }}">{{ post.data.title }}</a>
           </h3>
@@ -32,7 +43,7 @@ title: ホーム
       <summary><h2>Tool</h2></summary>
       <div class="posts-grid">
         {%- for tool in collections.tools | reverse -%}
-        <article class="post-card tool-icon neumorphic">
+        <article class="post-card dot-icon tool-icon neumorphic">
           <h3>
             <a href="{{ tool.url }}">{{ tool.data.title }}</a>
           </h3>
@@ -52,7 +63,7 @@ title: ホーム
       <summary><h2>Note</h2></summary>
       <div class="posts-grid">
         {%- for note in collections.notes | reverse -%}
-        <article class="post-card note-icon neumorphic">
+        <article class="post-card dot-icon note-icon neumorphic">
           <h3>
             <a href="{{ note.url }}">{{ note.data.title }}</a>
           </h3>

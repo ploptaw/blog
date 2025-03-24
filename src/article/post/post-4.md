@@ -2,9 +2,11 @@
 title: lightningcssについて
 date: 2025-03-21
 layout: "post"
+tags: optimize
 ---
 
 ### 問題点
+
 `lightningcss`を使用していた際に，ヘルプを確認したくなり以下のコマンドを実行した．
 
 ```bash
@@ -20,10 +22,13 @@ npx lightningcss-cli --help
   }
 }
 ```
+
 ### 解決法
+
 以下の方法で問題を解決した．
 
 1. `lightningcss-cli`のコマンドを直接実行する：
+
    ```bash
    npx lightningcss-cli --minify --bundle --targets ">= 0.25%" src/style.css -o src/style.min.css
    ```
