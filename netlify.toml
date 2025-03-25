@@ -1,12 +1,10 @@
 [[plugins]]
 package = "netlify-plugin-cache"
+  [plugins.inputs]
+  paths = [".cache", "docs"]
 
 [[plugins]]
-  package = "netlify-plugin-minify-html"
-
-  [plugins.inputs]
-  paths = [ ".cache", "docs" ]
-
+package = "netlify-plugin-minify-html"
   [plugins.inputs.minifierOptions]
     minifyJS = true
     minifyCSS = true
