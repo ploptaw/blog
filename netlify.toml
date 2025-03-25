@@ -2,15 +2,3 @@
 package = "netlify-plugin-cache"
   [plugins.inputs]
   paths = [".cache", "docs"]
-
-[[plugins]]
-package = "netlify-plugin-minify-html"
-  [plugins.inputs.minifierOptions]
-    minifyJS = true
-    minifyCSS = true
-    removeComments = false
-    removeEmptyElements = true
-    removeAttributeQuotes = true
-    collapseBooleanAttributes = true
-    collapseInlineTagWhitespace = true
-    collapseWhitespace = true

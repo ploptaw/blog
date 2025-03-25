@@ -24,13 +24,14 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "chokidar-cli": "^3.0.0",
-    "lightningcss": "^1.29.3",
-    "netlify-plugin-cache": "^1.0.3",
-    "uglify-js": "^3.19.3"
+    "netlify-plugin-cache": "^1.0.3"
   },
   "devDependencies": {
+    "@codestitchofficial/eleventy-plugin-minify": "^1.1.3",
     "@sardine/eleventy-plugin-code-highlighter": "^1.2.0",
-    "cross-env": "^7.0.3"
+    "chokidar-cli": "^3.0.0",
+    "cross-env": "^7.0.3",
+    "lightningcss": "^1.29.3",
+    "uglify-js": "^3.19.3"
   }
 }
