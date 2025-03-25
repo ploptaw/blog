@@ -21,11 +21,13 @@ module.exports = function (eleventyConfig) {
   );
 
   // 記事のコレクション
-  eleventyConfig.addCollection("posts", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/article/post/**/*.md").map((item) => {
-      item.data.permalink = `article/post/${item.fileSlug}/index.html`;
-      return item;
-    })
+  eleventyConfig.addCollection("articles", (collectionApi) =>
+    collectionApi
+      .getFilteredByGlob("src/article/article/**/*.md")
+      .map((item) => {
+        item.data.permalink = `article/article/${item.fileSlug}/index.html`;
+        return item;
+      })
   );
 
   // ツールのコレクション

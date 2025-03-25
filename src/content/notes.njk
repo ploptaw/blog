@@ -1,0 +1,21 @@
+---
+layout: base
+title: notes
+---
+
+<main>
+  <h1>{{ title }}</h1>
+
+  <section class="posts-section">
+    <div class="posts-grid">
+      {%- for note in collections.notes | reverse -%}
+      <article class="post-card dot-icon post-icon neumorphic">
+        <h3>
+          <a href="{{ note.url }}">{{ note.data.title }}</a>
+        </h3>
+        <time datetime="{{ note.date }}">{{ note.date | dateJP }}</time>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+</main>

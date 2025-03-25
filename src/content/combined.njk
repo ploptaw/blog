@@ -1,0 +1,36 @@
+---
+layout: base
+title: Notes and Articles
+---
+
+<main>
+  <h1>{{ title }}</h1>
+
+  <section class="posts-section">
+    <h2>Notes</h2>
+    <div class="posts-grid">
+      {%- for note in collections.notes | reverse -%}
+      <article class="post-card dot-icon post-icon neumorphic">
+        <h3>
+          <a href="{{ note.url }}">{{ note.data.title }}</a>
+        </h3>
+        <time datetime="{{ note.date }}">{{ note.date | dateJP }}</time>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+
+  <section class="posts-section">
+    <h2>Articles</h2>
+    <div class="posts-grid">
+      {%- for article in collections.articles | reverse -%}
+      <article class="post-card dot-icon post-icon neumorphic">
+        <h3>
+          <a href="{{ article.url }}">{{ article.data.title }}</a>
+        </h3>
+        <time datetime="{{ article.date }}">{{ article.date | dateJP }}</time>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+</main>

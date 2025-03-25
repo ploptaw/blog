@@ -1,0 +1,23 @@
+---
+layout: base
+title: Tools
+---
+
+<main>
+  <h1>{{ title }}</h1>
+
+  <section class="posts-section">
+    <div class="posts-grid">
+      {%- for tool in collections.tools | reverse -%}
+      <article class="post-card dot-icon tool-icon neumorphic">
+        <h3>
+          <a href="{{ tool.url }}">{{ tool.data.title }}</a>
+        </h3>
+        <p href="{{ description }}" class="no-decoration">
+          {{ tool.data.description }}
+        </p>
+      </article>
+      {%- endfor -%}
+    </div>
+  </section>
+</main>

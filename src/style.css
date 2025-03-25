@@ -50,7 +50,7 @@ a:hover {
 /* 見出し */
 h1 {
   font-size: 2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
@@ -117,6 +117,13 @@ td {
   font-size: 1.5rem;
   padding: 0.8rem 1.2rem;
   color: var(--text-primary);
+}
+
+.more {
+  color: #1d1d83;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem 0 0 1rem;
 }
 
 /* 記事 */
@@ -273,7 +280,7 @@ button {
   }
 
   .nav-link {
-    padding: 0 0.6rem;
+    padding: 0 0.7rem;
     font-size: 1.3rem;
   }
 
