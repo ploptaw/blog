@@ -1,6 +1,6 @@
 //const criticalCss = require("eleventy-critical-css");
 const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
-const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
+//const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
@@ -14,10 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(codeHighlighter, { urlTheme: PRISM_THEME });
 
   // minify plugin options
-  eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
-
-  // criticalCss plugin options
-  //eleventyConfig.addPlugin(criticalCss);
+  //eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // gallery のコレクション
   eleventyConfig.addCollection("gallery", () =>
