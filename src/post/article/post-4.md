@@ -1,5 +1,5 @@
 ---
-title: PageSpeed Insightsの調査
+title: Page performance調査
 date: 2025-03-26
 layout: "post"
 tags: post
