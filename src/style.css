@@ -50,7 +50,6 @@ a:hover {
 /* 見出し */
 h1 {
   font-size: 2rem;
-  margin: 0.5rem 0;
 }
 
 h2 {
@@ -59,9 +58,10 @@ h2 {
   margin: 0.5rem 0 0.4rem;
   padding-bottom: 0.5rem;
 }
-.h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+
+h3 {
+  padding: 1rem 0 0.2rem 0;
+  font-size: 1.4rem;
   color: var(--text-primary);
 }
 
