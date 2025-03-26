@@ -1,9 +1,8 @@
 # 🌟 Blog Project
 
-このリポジトリは静的サイトジェネレーターである[Eleventy](https://www.11ty.dev/) を用いて作成したブログです．
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e3143fe6-b808-4551-bbf3-64659623299f/deploy-status)](https://app.netlify.com/sites/ploptaw-blog/deploys)
 
-## 🛠️ サイト公開について
-
+このリポジトリは静的サイトジェネレーターである[Eleventy](https://www.11ty.dev/) を用いて作成したブログです．  
 静的サイトのホスティングサービスとサーバーレスのバックエンドサービスを提供する [netlify](https://www.netlify.com/) を用いて公開しています．
 
 ## 📂 プロジェクト構成

@@ -42,7 +42,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.section-divider {
+.spacer {
   border: none;
   padding-bottom: 1rem;
 }
@@ -50,7 +50,7 @@ a:hover {
 /* 見出し */
 h1 {
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
 }
 
 h2 {
@@ -69,7 +69,7 @@ h2 {
 ol,
 ul {
   list-style-position: outside;
-  padding-left: 1.5rem;
+  padding-left: 1.2rem;
 }
 
 /* テーブル */
@@ -119,41 +119,10 @@ td {
   color: var(--text-primary);
 }
 
-.more {
-  color: #1d1d83;
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem 0 0 1rem;
-}
-
 /* 記事 */
 article {
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-/* details */
-details summary {
-  display: flex;
-  list-style: none;
-}
-
-details summary::before {
-  content: "▶";
-  margin: 0.9rem 0.2rem 0 0.2rem;
-}
-
-details[open] summary::before {
-  content: "▼";
-  margin: 0.9rem 0.2rem 0 0.2rem;
-}
-
-details[open] > div {
-  animation: slideDown 0.3s ease-out;
-}
-
-details summary::-webkit-details-marker {
-  display: none; /* Safari/iOS用 */
 }
 
 .neumorphic {
@@ -162,17 +131,6 @@ details summary::-webkit-details-marker {
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   transition: box-shadow var(--transition-fast);
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* グリッド */
@@ -191,6 +149,31 @@ details summary::-webkit-details-marker {
   position: relative;
 }
 
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.7rem;
+}
+
+.gallery-card {
+  padding: 0.5rem;
+  text-align: center;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius-small);
+}
+
+.pixel-art {
+  max-width: 150px;
+  image-rendering: pixelated;
+}
+
 .dot-icon::after {
   content: "";
   position: absolute;
@@ -200,7 +183,8 @@ details summary::-webkit-details-marker {
   border-radius: 50%;
 }
 
-.post-icon::after {
+.post-icon::after,
+.tags li.tag-post::after {
   background-color: rgba(50, 190, 140, 0.7);
 }
 
@@ -208,23 +192,35 @@ details summary::-webkit-details-marker {
   background-color: rgba(150, 150, 240, 0.7);
 }
 
-.note-icon::after {
+.note-icon::after,
+.tags li.tag-note::after {
   background-color: rgba(240, 150, 150, 0.7);
 }
 
 /* タグ */
-.tags {
-  font-size: 1rem;
-  padding-left: 1rem;
-  align-items: center;
+.tags li {
+  display: inline-block;
+  padding: 0 0.2rem;
+  margin: 0 1rem 0rem 0;
+  border-radius: 1rem;
+  background: #bdbeec;
+  font-size: 0.9em;
 }
 
-.tags li {
-  list-style: none;
-  padding: 0 0.2rem;
-  margin: 0 1rem 1rem 0;
-  background-color: #bdbeec;
-  border-radius: var(--border-radius-small);
+.tags li.icon-only {
+  color: transparent;
+  position: relative;
+  background: none;
+}
+
+/* アイコン表示 */
+.tags li.icon-only::after {
+  content: "";
+  position: absolute;
+  inset: auto 2.5rem 0.6rem auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
 .input {

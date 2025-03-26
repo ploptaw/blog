@@ -22,28 +22,16 @@ module.exports = function (eleventyConfig) {
 
   // 記事のコレクション
   eleventyConfig.addCollection("articles", (collectionApi) =>
-    collectionApi
-      .getFilteredByGlob("src/article/article/**/*.md")
-      .map((item) => {
-        item.data.permalink = `article/article/${item.fileSlug}/index.html`;
-        return item;
-      })
+    collectionApi.getFilteredByGlob("src/post/article/**/*.md").map((item) => {
+      item.data.permalink = `post/articles/${item.fileSlug}/index.html`;
+      return item;
+    })
   );
 
   // ツールのコレクション
   eleventyConfig.addCollection("tools", (collectionApi) =>
-    collectionApi
-      .getFilteredByGlob("src/article/tool/**/*.html")
-      .map((item) => {
-        item.data.permalink = `article/tool/${item.fileSlug}/index.html`;
-        return item;
-      })
-  );
-
-  // メモのコレクション
-  eleventyConfig.addCollection("notes", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/article/note/**/*.md").map((item) => {
-      item.data.permalink = `notes/${item.fileSlug}/index.html`;
+    collectionApi.getFilteredByGlob("src/post/tool/**/*.html").map((item) => {
+      item.data.permalink = `post/tool/${item.fileSlug}/index.html`;
       return item;
     })
   );

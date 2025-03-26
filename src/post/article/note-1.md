@@ -1,7 +1,8 @@
 ---
 date: 2025-02-21
-title: メモ1
+title: 初記事
 layout: "post"
+tags: note
 ---
 
-初投稿
+初記事

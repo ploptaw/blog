@@ -2,7 +2,7 @@
 title: 装飾コード表
 date: 2025-02-19
 layout: "post"
-tags: minecraft
+tags: [post, minecraft]
 ---
 
 |      コード      |     Unicode      | 　　&emsp;&emsp;&emsp;&emsp;　色 / 装飾                           |

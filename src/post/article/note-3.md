@@ -2,7 +2,7 @@
 title: css/js圧縮
 date: 2025-03-21
 layout: "post"
-tags: optimize
+tags: [note, 11ty]
 ---
 
 ### uglifyjs によるサイズ削減

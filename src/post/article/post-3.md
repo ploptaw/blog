@@ -2,7 +2,7 @@
 title: lightningcssについて
 date: 2025-03-21
 layout: "post"
-tags: optimize
+tags: [post, 11ty]
 ---
 
 ### 問題点

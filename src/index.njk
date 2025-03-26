@@ -3,10 +3,6 @@ layout: base
 title: Home
 ---
 
-<head>
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-</head>
-
 <main>
   <h1>Welcome to my blog</h1>
 
@@ -21,70 +17,46 @@ title: Home
   <br />
 
   <section class="posts-section">
-    <details open>
-      <summary><h2>Article</h2></summary>
-      <div class="posts-grid">
-        {%- for article in collections.articles | reverse -%} {%- if loop.index
-        <= 3 -%}
-        <article class="post-card dot-icon post-icon neumorphic">
-          <h3>
-            <a href="{{ article.url }}">{{ article.data.title }}</a>
-          </h3>
-          <time datetime="{{ article.date }}">{{ article.date | dateJP }}</time>
-        </article>
-        {%- endif -%} {%- endfor -%}
-      </div>
-      <a class="more" href="/content/articles">See more →</a>
-    </details>
+    <h2>▹Article</h2>
+    <div class="posts-grid">
+      {%- for article in collections.articles | reverse -%} {%- if loop.index <=
+      4 -%}
+      <article
+        class="post-card dot-icon 
+              {{ 'note-icon' if article.data.tags[0] === 'note' else 'post-icon' }}
+              neumorphic"
+      >
+        <h3>
+          <a href="{{ article.url }}">{{ article.data.title }}</a>
+        </h3>
+        <time datetime="{{ article.date }}">{{ article.date | dateJP }}</time>
+      </article>
+      {%- endif -%} {%- endfor -%}
+    </div>
+
+    <a
+      class="more"
+      href="/content/list"
+      style="color: #7a5000; display: flex; padding: 1rem 0 0 1rem"
+      >more →</a
+    >
   </section>
 
-  <hr class="section-divider" />
+  <hr class="spacer" />
 
   <section class="tools-section">
-    <details open>
-      <summary><h2>Tool</h2></summary>
-      <div class="posts-grid">
-        {%- for tool in collections.tools | reverse -%} {%- if loop.index <= 3
-        -%}
-        <article class="post-card dot-icon tool-icon neumorphic">
-          <h3>
-            <a href="{{ tool.url }}">{{ tool.data.title }}</a>
-          </h3>
-          <p href="{{ description }}" class="no-decoration">
-            {{ tool.data.description }}
-          </p>
-        </article>
-        {%- endif -%} {%- endfor -%}
-      </div>
-      <a class="more" href="/content/tools">See more →</a>
-    </details>
+    <h2>▹Tool</h2>
+    <div class="posts-grid">
+      {%- for tool in collections.tools | reverse -%} {%- if loop.index <= 4 -%}
+      <article class="post-card dot-icon tool-icon neumorphic">
+        <h3>
+          <a href="{{ tool.url }}">{{ tool.data.title }}</a>
+        </h3>
+        <p href="{{ description }}" class="no-decoration">
+          {{ tool.data.description }}
+        </p>
+      </article>
+      {%- endif -%} {%- endfor -%}
+    </div>
   </section>
-
-  <hr class="section-divider" />
-
-  <section class="notes-section">
-    <details open>
-      <summary><h2>Note</h2></summary>
-      <div class="posts-grid">
-        {%- for note in collections.notes | reverse -%} {%- if loop.index <= 3
-        -%}
-        <article class="post-card dot-icon note-icon neumorphic">
-          <h3>
-            <a href="{{ note.url }}">{{ note.data.title }}</a>
-          </h3>
-          <time datetime="{{ note.date }}">{{ note.date | dateJP }}</time>
-        </article>
-        {%- endif -%} {%- endfor -%}
-      </div>
-      <a class="more" href="/content/notes">See more →</a>
-    </details>
-  </section>
-
-  <script>
-    function toggleVisibility(id) {
-      const element = document.getElementById(id);
-      element.style.visibility =
-        element.style.visibility === "hidden" ? "visible" : "hidden";
-    }
-  </script>
 </main>

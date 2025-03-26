@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "cross-env npx @11ty/eleventy",
-    "dev": "cross-env npx @11ty/eleventy --serve",
+    "dev": "cross-env npx @11ty/eleventy --serve --incremental",
     "debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
     "compress": "npx lightningcss-cli --minify --bundle --targets \">= 0.25%, not dead\" src/style.css -o src/public/style.min.css",
     "watch": "chokidar src/style.css sec/js/*.js -c \"npm run compress\""
@@ -24,11 +24,11 @@
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
+    "@codestitchofficial/eleventy-plugin-minify": "^1.1.3",
+    "@sardine/eleventy-plugin-code-highlighter": "^1.2.0",
     "netlify-plugin-cache": "^1.0.3"
   },
   "devDependencies": {
-    "@codestitchofficial/eleventy-plugin-minify": "^1.1.3",
-    "@sardine/eleventy-plugin-code-highlighter": "^1.2.0",
     "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
     "lightningcss": "^1.29.3",
