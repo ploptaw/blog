@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
   eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
-
+  eleventyConfig.addPassthroughCopy("./robots.txt");
   // codeHighlight plugin options
   const PRISM_THEME =
     "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
