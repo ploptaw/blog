@@ -5,7 +5,7 @@ layout: "post"
 tags: [post, 11ty]
 ---
 
-### 問題点
+## 問題点
 
 `lightningcss`を使用していた際に，ヘルプを確認したくなり以下のコマンドを実行した．
 
@@ -13,17 +13,9 @@ tags: [post, 11ty]
 npx lightningcss-cli --help
 ```
 
-その後，ドキュメントに記載されているスクリプトが動作しなった．
+その後，スクリプトが動作しなくなってしまった．
 
-```json
-{
-  "scripts": {
-    "build": "lightningcss --minify --bundle --targets \">= 0.25%\" input.css -o output.css"
-  }
-}
-```
-
-### 解決法
+## 解決法
 
 以下の方法で問題を解決した．
 

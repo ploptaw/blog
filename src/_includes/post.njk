@@ -3,11 +3,10 @@ layout: base
 ---
 
 <main>
-  <article>
-    <h1>{{ title }}</h1>
-    <time datetime="{{ date }}">{{ date | dateJP }}</time>
-    {% if tags %}<span class="tags">{{ tags | join(', ') }}</span
-    >{% endif %}
-    {{ content | safe }}
-  </article>
+  <h1>{{ title }}</h1>
+  <time datetime="{{ date }}">{{ date | dateJP }}</time>
+  {% if tags %}<span class="tags">{{ tags | join(', ') }}</span
+  >{% endif %}
+  <hr class="span" />
+  {{ content | safe }}
 </main>

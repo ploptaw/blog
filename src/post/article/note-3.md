@@ -5,12 +5,14 @@ layout: "post"
 tags: [note, 11ty]
 ---
 
-### uglifyjs によるサイズ削減
+## uglifyjs によるサイズ削減
+
+実行コマンド
 
 ```bash
-npx uglifyjs ./src/js/lottery.js -c -m --output ./src/js/lottery.min.js
+npx uglifyjs ./js/script.js -c -m --output ./js/script.min.js
 ```
 
-### その他の最適化について
+## その他の最適化について
 
 eleventy-critical-css を用いることを考えたが，ビルド時間がやけに長くなったのでいったん保留

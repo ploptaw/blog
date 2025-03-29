@@ -5,27 +5,24 @@ title: Home
 
 <main>
   <h1>Welcome to my blog</h1>
-
-  <div class="about-link">
-    <article class="about-card">
-      <p>
-        This blog is a collection of my tools, articles, and notes.
-        <a
-          href="/content/about"
-          style="color: #2400b3; text-decoration: underline"
-          >Read more →</a
-        >
-      </p>
-    </article>
+  <div>
+    <p>
+      This blog is a collection of my tools, articles, and notes.
+      <a
+        href="/content/about"
+        style="color: #2400b3; text-decoration: underline"
+        >Read more →</a
+      >
+    </p>
   </div>
   <br />
 
   <section class="posts-section">
-    <h2>▹Article</h2>
+    <h1>▹Article</h1>
     <div class="posts-grid">
       {%- for article in collections.articles | reverse -%} {%- if loop.index <=
       4 -%}
-      <article
+      <card
         class="post-card dot-icon 
               {{ 'note-icon' if article.data.tags[0] === 'note' else 'post-icon' }}
               neumorphic"
@@ -34,32 +31,35 @@ title: Home
           <a href="{{ article.url }}">{{ article.data.title }}</a>
         </h3>
         <time datetime="{{ article.date }}">{{ article.date | dateJP }}</time>
-      </article>
+      </card>
       {%- endif -%} {%- endfor -%}
     </div>
 
     <a
       class="more"
       href="/content/list"
-      style="color: #2400b3; display: flex; padding: 1rem 0 0 1rem"
+      style="
+        color: #2400b3;
+        display: flex;
+        padding: 1rem 0 0 1rem;
+        font-size: 1.2em;
+      "
       >more →</a
     >
   </section>
 
-  <hr class="spacer" />
-
   <section class="tools-section">
-    <h2>▹Tool</h2>
+    <h1>▹Tool</h1>
     <div class="posts-grid">
       {%- for tool in collections.tools | reverse -%} {%- if loop.index <= 4 -%}
-      <article class="post-card dot-icon tool-icon neumorphic">
+      <card class="post-card dot-icon tool-icon neumorphic">
         <h3>
           <a href="{{ tool.url }}">{{ tool.data.title }}</a>
         </h3>
         <p href="{{ description }}" class="no-decoration">
           {{ tool.data.description }}
         </p>
-      </article>
+      </card>
       {%- endif -%} {%- endfor -%}
     </div>
   </section>

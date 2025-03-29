@@ -1,12 +1,12 @@
-const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
-const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
+import codeHighlighter from "@sardine/eleventy-plugin-code-highlighter";
+import eleventyPluginFilesMinifier from "@codestitchofficial/eleventy-plugin-minify";
+import gallery from "./src/content/gallery_list/list.json" with { type: "json" };
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
-  eleventyConfig.addPassthroughCopy("./manifest.webmanifest");
-  eleventyConfig.addPassthroughCopy("./robots.txt");
+
   // codeHighlight plugin options
   const PRISM_THEME =
     "https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coy-without-shadows.min.css";
@@ -16,9 +16,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // gallery のコレクション
-  eleventyConfig.addCollection("gallery", () =>
-    require("./src/gallery/gallery.json")
-  );
+  eleventyConfig.addCollection("gallery", () => gallery);
 
   // 記事のコレクション
   eleventyConfig.addCollection("articles", (collectionApi) =>
@@ -68,10 +66,10 @@ module.exports = function (eleventyConfig) {
       input: "src",
       output: "docs",
     },
-    templateFormats: ["md", "njk", "html", "haml"],
+    templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     hamlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
   };
-};
+}

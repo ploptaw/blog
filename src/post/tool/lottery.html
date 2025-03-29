@@ -5,7 +5,7 @@ layout: "tool"
 ---
 
 <div>
-  <label for="numN">任意の数 (1-100):</label>
+  <h2 for="numN">母数 (1-100):</h2>
   <input
     type="number"
     id="numN"
@@ -16,7 +16,7 @@ layout: "tool"
     class="input"
   />
 
-  <label for="numX">選択する数 (1-100):</label>
+  <h2 for="numX">選択数 (1-100):</h2>
   <input
     type="number"
     id="numX"
@@ -34,7 +34,7 @@ layout: "tool"
   >
     抽選する
   </button>
-  <div id="result" class="result"></div>
+  <div id="result" class="result" style="text-align: center"></div>
 </div>
 
-<script src="/js/lottery.min.js"></script>
+<script type="module" src="/js/lottery.min.js"></script>

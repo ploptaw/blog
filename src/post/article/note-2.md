@@ -5,7 +5,7 @@ layout: "post"
 tags: [note, minecraft]
 ---
 
-### 確認
+## 確認項目
 
 - gradle.properties
 - build.gradle

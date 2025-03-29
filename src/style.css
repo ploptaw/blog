@@ -13,9 +13,7 @@
   --shadow-dark: #a3b1c6;
   --shadow-light: #ffffff;
   --text-primary: #17253d;
-  --input-padding: 1rem;
-  --border-radius-small: 0.5rem;
-  --transition-fast: 0.2s ease;
+  --border-radius: 0.5rem;
   --box-shadow: 5px 5px 10px var(--shadow-dark),
     -5px -5px 10px var(--shadow-light);
 }
@@ -24,10 +22,9 @@
 body {
   background-color: var(--bg-color);
   padding: 1rem;
-  color: var(--text-primary);
   font-family: "Yu Mincho", serif;
   font-display: swap;
-  font-size: 1.5em;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
@@ -42,27 +39,23 @@ a:hover {
   text-decoration: underline;
 }
 
-.spacer {
-  border: none;
-  padding-bottom: 1rem;
+.span {
+  margin-bottom: 1rem;
 }
 
 /* 見出し */
 h1 {
+  padding-top: 1rem;
   font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  margin: 0.5rem 0 0.4rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
 h3 {
-  padding: 1rem 0 0.2rem 0;
-  font-size: 1.4rem;
-  color: var(--text-primary);
+  padding: 0.5rem 0 0.2rem 0;
 }
 
 /* リスト */
@@ -91,22 +84,18 @@ td {
 
 ::-webkit-scrollbar-thumb {
   background: var(--shadow-dark); /* スクロールバーのつまみの色 */
-  border-radius: var(--border-radius-small);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-primary); /* ホバー時の色 */
+  border-radius: var(--border-radius);
 }
 
 ::-webkit-scrollbar-track {
   background: var(--bg-color); /* スクロールバーの背景 */
-  border-radius: 6px; /* 角丸 */
+  border-radius: var(--border-radius);
 }
 
 /* ヘッダー */
 .home-header {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .nav-links {
@@ -119,18 +108,15 @@ td {
   color: var(--text-primary);
 }
 
-/* 記事 */
-article {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
 .neumorphic {
-  background: var(--bg-color);
   padding: 1rem;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
-  transition: box-shadow var(--transition-fast);
+  background: var(--bg-color);
+}
+
+code {
+  margin-bottom: 1.5rem;
 }
 
 /* グリッド */
@@ -157,8 +143,8 @@ article {
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
 }
 
 .gallery-card {
@@ -166,7 +152,7 @@ article {
   text-align: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius);
 }
 
 .pixel-art {
@@ -226,13 +212,13 @@ article {
 .input {
   font-size: 1rem;
   border: none;
-  padding: var(--input-padding);
+  width: 100%;
+  padding: 1rem;
   margin: 0 0.5rem 0.5rem 0;
   background: var(--bg-color);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius);
   box-shadow: inset 2px 2px 4px var(--shadow-dark),
     inset -2px -2px 4px var(--shadow-light);
-  width: 100%;
 }
 
 button {
@@ -240,18 +226,15 @@ button {
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   background: var(--bg-color);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius);
   box-shadow: 5px 5px 10px var(--shadow-dark),
     -5px -5px 10px var(--shadow-light);
-  transition: box-shadow var(--transition-fast),
-    transform var(--transition-fast);
   cursor: pointer;
   font-size: 1rem;
   color: var(--text-primary);
 }
 
 .result {
-  text-align: center;
   padding: 1rem 0;
   width: 100%;
   overflow: hidden;
@@ -260,11 +243,6 @@ button {
 
 /* メディアクエリ */
 @media (max-width: 768px) {
-  body {
-    padding: 1rem;
-    font-size: 1.2rem;
-  }
-
   .home-header {
     flex-direction: column;
     align-items: center;
@@ -276,7 +254,7 @@ button {
   }
 
   .nav-link {
-    padding: 0 0.7rem;
+    padding: 0 0.8rem;
     font-size: 1.3rem;
   }
 

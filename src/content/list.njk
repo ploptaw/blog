@@ -4,53 +4,50 @@ title: All Post
 ---
 
 <main>
-  <article>
-    <h1>Article</h1>
+  <h1>Article</h1>
+  <hr class="span" />
+  <ul>
+    {%- set previousDate = "" -%} {%- for article in collections.articles -%}
+    <li class="post-item">
+      <div style="display: flex; align-items: center">
+        <!-- タイトル -->
+        <a href="{{ article.url }}">{{ article.data.title }}</a>
 
-    <ul>
-      {%- set previousDate = "" -%} {%- for article in collections.articles -%}
-      <li class="post-item">
-        <div style="display: flex; align-items: center">
-          <!-- タイトル -->
-          <a href="{{ article.url }}">{{ article.data.title }}</a>
-
-          <!-- タグ -->
-          {%- if article.data.tags -%}
-          <ul class="tags">
-            {%- for tag in article.data.tags -%} {%- if tag == 'post' or tag ==
-            'note' -%}
-            <li class="tag-{{ tag | slug }} icon-only">
-              {{ tag }}
-            </li>
-            {%- endif -%} {%- endfor -%}
-          </ul>
-          {%- endif -%}
-        </div>
-
-        <!-- 日付 -->
-        {%- if previousDate != (article.date | dateMIN ) -%}
-        <span class="post-date" style="font-size: 0.8em; color: #848fa0">{{
-          article.date | dateMIN
-        }}</span>
-        {%- set previousDate = article.date | dateMIN -%} {%- else -%}
-        <span class="post-separator"> </span>
+        <!-- タグ -->
+        {%- if article.data.tags -%}
+        <ul class="tags">
+          {%- for tag in article.data.tags -%} {%- if tag == 'post' or tag ==
+          'note' -%}
+          <li class="tag-{{ tag | slug }} icon-only">
+            {{ tag }}
+          </li>
+          {%- endif -%} {%- endfor -%}
+        </ul>
         {%- endif -%}
+      </div>
+
+      <!-- 日付 -->
+      {%- if previousDate != (article.date | dateMIN ) -%}
+      <span class="post-date" style="font-size: 0.8em; color: #848fa0">{{
+        article.date | dateMIN
+      }}</span>
+      {%- set previousDate = article.date | dateMIN -%} {%- else -%}
+      <span class="post-separator"> </span>
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  <hr class="span" />
+
+  <!-- タグ一覧セクション -->
+  <section class="all-tags">
+    <h1>Tag</h1>
+    <ul class="tags" style="display: flex; flex-wrap: wrap; padding: 1rem">
+      {%- for tag in collections.tags | sort -%}
+      <li style="margin-right: 1rem; list-style: none">
+        <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
       </li>
       {%- endfor -%}
     </ul>
-
-    <hr class="spacer" />
-
-    <!-- タグ一覧セクション -->
-    <section class="all-tags">
-      <h1>Tag List</h1>
-      <ul class="tags" style="display: flex; flex-wrap: wrap; padding: 1rem">
-        {%- for tag in collections.tags | sort -%}
-        <li style="margin-right: 1rem; list-style: none">
-          <a href="/tags/{{ tag | slug }}">{{ tag }}</a>
-        </li>
-        {%- endfor -%}
-      </ul>
-    </section>
-  </article>
+  </section>
 </main>
