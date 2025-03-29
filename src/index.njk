@@ -18,7 +18,7 @@ title: Home
   <br />
 
   <section class="posts-section">
-    <h1>▹Article</h1>
+    <h2 style="font-size: 2rem">▹Article</h2>
     <div class="posts-grid">
       {%- for article in collections.articles | reverse -%} {%- if loop.index <=
       4 -%}
@@ -49,7 +49,7 @@ title: Home
   </section>
 
   <section class="tools-section">
-    <h1>▹Tool</h1>
+    <h2 style="font-size: 2rem">▹Tool</h2>
     <div class="posts-grid">
       {%- for tool in collections.tools | reverse -%} {%- if loop.index <= 4 -%}
       <card class="post-card dot-icon tool-icon neumorphic">
