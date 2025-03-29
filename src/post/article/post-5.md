@@ -41,7 +41,7 @@ export
 -    require("./src/content/gallery_list/list.json")
 -  );
 
-+ import gallery from "./src/content/gallery_list/list.json" with { type: "json" };
++ import gallery from "./src/content/gallery_list/list.json" with/*or assert)*/ { type: "json" };
 + export default function (eleventyConfig) {
 +    eleventyConfig.addCollection("gallery", () => gallery);
 ```
@@ -54,3 +54,5 @@ export
 - script src="script.js"
 + script type="module" src="script.js"
 ```
+
+なお本ブログでは，次の Eleventy メジャーアップデートに合わせ ESM へ移行することを考えている，

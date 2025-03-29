@@ -1,8 +1,7 @@
-import codeHighlighter from "@sardine/eleventy-plugin-code-highlighter";
-import eleventyPluginFilesMinifier from "@codestitchofficial/eleventy-plugin-minify";
-import gallery from "./src/content/gallery_list/list.json" with { type: "json" };
+const codeHighlighter = require("@sardine/eleventy-plugin-code-highlighter");
+const eleventyPluginFilesMinifier = require("@codestitchofficial/eleventy-plugin-minify");
 
-export default function (eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
   eleventyConfig.addPassthroughCopy("./src/js/*.min.js");
@@ -16,7 +15,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyPluginFilesMinifier);
 
   // gallery のコレクション
-  eleventyConfig.addCollection("gallery", () => gallery);
+  eleventyConfig.addCollection("gallery", () =>
+    require("./src/content/gallery_list/list.json")
+  );
 
   // 記事のコレクション
   eleventyConfig.addCollection("articles", (collectionApi) =>
@@ -72,4 +73,4 @@ export default function (eleventyConfig) {
     hamlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
   };
-}
+};
